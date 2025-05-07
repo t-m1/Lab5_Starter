@@ -10,7 +10,7 @@ function init() {
   const newButton = document.querySelector('button');
   const newSlider = document.getElementById('volume');
   const newVolIcon = document.querySelector('#volume-controls img');
-  const canvas = document.querySelector('#body>header a');
+  
 
   newHorn.addEventListener('change', updateImg);
   newSlider.addEventListener('input', updateSlider);
