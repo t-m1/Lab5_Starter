@@ -17,16 +17,19 @@ function init() {
     voices = synth.getVoices();
 
     for (let i = 0; i < voices.length; i++) {
-      const option = document.createElement("option");
+      const option = document.createElement('option');
       option.textContent = `${voices[i].name} (${voices[i].lang})`;
-
-      option.setAttribute("data-lang", voices[i].lang);
-      option.setAttribute("data-name", voices[i].name);
+      option.value = voices[i].name;
       newVoice.appendChild(option);
     }
   }
 
   function talkButton(){
+
+    if (newText.value === '' || newVoice.value === 'select') {
+      return;
+    }
+
     newImg.src = 'assets/images/smiling-open.png';
     const utterance = new SpeechSynthesisUtterance(newText.value);
     const select = voices.find(voice => voice.name === newVoice.value);
