@@ -10,7 +10,7 @@ function init() {
   const newButton = document.querySelector('button');
   const newSlider = document.getElementById('volume');
   const newVolIcon = document.querySelector('#volume-controls img');
-  
+  const confetti = new JSConfetti();
 
   newHorn.addEventListener('change', updateImg);
   newSlider.addEventListener('input', updateSlider);
@@ -37,8 +37,6 @@ function init() {
       newAudio.play();
 
       if (newHorn.value == 'party-horn'){
-        const confetti = new JSConfetti();
-        confetti.addConfetti();
         confetti.addConfetti();
       }
     }
